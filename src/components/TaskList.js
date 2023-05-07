@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useSate } from "react";
+import Task from "./Task";
 
-function TaskList() {
+function TaskList({ tasks, handleDelete }) {
   return (
     <div className="tasks">
-      {/* display a list of tasks using Task component */}
+      {tasks.map((task, i) => <Task key={i} task={task} handleDelete={handleDelete}/>)}
     </div>
   );
 }
